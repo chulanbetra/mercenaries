@@ -41,7 +41,7 @@ public class PrefabInstantiateSelected : Editor
 	            InstantiateSelectedPrefab(e);
 			}
         }
-	}
+	}	
 	
 	void InstantiateSelectedPrefab(Event e)
 	{
