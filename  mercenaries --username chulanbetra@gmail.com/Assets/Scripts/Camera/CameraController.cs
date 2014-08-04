@@ -22,32 +22,45 @@ public class CameraController : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () 
-	{	
-		if (Input.GetKey(KeyCode.W))
+	{			
+		HandleCameraMovement();
+		HandleCameraRotation();
+		HandleCameraZoom();
+	}
+	
+	// move camera according to input
+	void HandleCameraMovement()
+	{
+		if (Input.GetKey(KeyCode.W) || Input.mousePosition.y > Screen.height - 30.0f)
 		{
 			// move camera up
 			Vector3 vDir = new Vector3(m_pViewCamera.transform.forward.x, 0, m_pViewCamera.transform.forward.z);
 			vDir.Normalize();
 			m_pViewCamera.transform.Translate(ScrollSpeed * vDir * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.S))
+		else if (Input.GetKey(KeyCode.S) || Input.mousePosition.y < 30.0f)
 		{
 			// move camera down
 			Vector3 vDir = new Vector3(m_pViewCamera.transform.forward.x, 0, m_pViewCamera.transform.forward.z);
 			vDir.Normalize();
 			m_pViewCamera.transform.Translate(-ScrollSpeed * vDir * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.A))
+		else if (Input.GetKey(KeyCode.A) || Input.mousePosition.x < 30.0f)
 		{
 			// move camera left
 			m_pViewCamera.transform.Translate(-ScrollSpeed * m_pViewCamera.transform.right * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.D))
+		else if (Input.GetKey(KeyCode.D) || Input.mousePosition.x > Screen.width - 30.0f)
 		{
 			// move camera right
 			m_pViewCamera.transform.Translate(ScrollSpeed * m_pViewCamera.transform.right * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.Q))
+	}
+	
+	// rotate camera according to input
+	void HandleCameraRotation()
+	{
+		if (Input.GetKey(KeyCode.Q))
 		{
 			// rotate camera clockwise around Z axis
 			CameraRotate(TurnSpeed);
@@ -57,7 +70,12 @@ public class CameraController : MonoBehaviour
 			// rotate camera counter clockwise around Z axis
 			CameraRotate(-TurnSpeed);
 		}
-		else if (Input.GetKey(KeyCode.Z))
+	}
+	
+	// zoom camera according to input
+	void HandleCameraZoom()
+	{
+		if (Input.GetKey(KeyCode.Z))
 		{
 			// zoom in	
 			CameraZoom(-ZoomSpeed);
