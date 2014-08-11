@@ -23,15 +23,22 @@ public class PrefabInstantiateSelected : Editor
 	{						
 		GameObject pNewSelectedObject = Selection.activeObject as GameObject;			
 		if (m_pSelectedObject != pNewSelectedObject && IsPrefab(pNewSelectedObject))
-		{
-			Debug.Log("new preview prefab: "+pNewSelectedObject.name);			
+		{						
 			if (m_pPreviewPrefab != null)
 			{
 				DestroyImmediate(m_pPreviewPrefab);
 			}
-			m_pSelectedObject = pNewSelectedObject;
-			m_pPreviewPrefab = (GameObject)PrefabUtility.InstantiatePrefab(m_pSelectedObject);
-			m_pPreviewPrefab.transform.position = Vector3.zero;
+			if (pNewSelectedObject.name == "SceneEdit")
+			{
+				m_pSelectedObject = null;
+			}
+			else
+			{
+				Debug.Log("new preview prefab: "+pNewSelectedObject.name);
+				m_pSelectedObject = pNewSelectedObject;
+				m_pPreviewPrefab = (GameObject)PrefabUtility.InstantiatePrefab(m_pSelectedObject);
+				m_pPreviewPrefab.transform.position = Vector3.zero;
+			}
 		}
 	}
 	

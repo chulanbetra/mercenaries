@@ -15,15 +15,16 @@ public class SceneEdit : MonoBehaviour
 	
 	void OnDrawGizmos()
 	{
+		float fTileWidth = GameSettings.Instance.TileWidth;
 		// draw grid on zero y plane
-	    for (float z = - 200.0f; z < 200.0f; z += 1)
+	    for (float z = - 150.0f; z < 150.0f; z += fTileWidth)
 	    {
-	        Gizmos.DrawLine(new Vector3(-1000000.0f, 0, z), new Vector3(1000000.0f, 0, z));
+	        Gizmos.DrawLine(new Vector3(-1000000.0f, 0.05f, z), new Vector3(1000000.0f, 0.05f, z));
 	    }
 	    
-	    for (float x = -200.0f; x < 200.0f; x += 1)
+	    for (float x = -150.0f; x < 150.0f; x += fTileWidth)
 	    {
-	        Gizmos.DrawLine(new Vector3(x, 0, -1000000.0f), new Vector3(x, 0, 1000000.0f));
+	        Gizmos.DrawLine(new Vector3(x, 0.05f, -1000000.0f), new Vector3(x, 0.05f, 1000000.0f));
 	    }
 	}
 }
