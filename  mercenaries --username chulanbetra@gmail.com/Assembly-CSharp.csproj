@@ -46,8 +46,12 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Core\Enums.cs" />
+     <Compile Include="Assets\Scripts\Core\GameSettings.cs" />
      <Compile Include="Assets\Scripts\Core\Tile.cs" />
      <Compile Include="Assets\Scripts\EditorHelpers\SceneEdit.cs" />
+     <Compile Include="Assets\Scripts\Objects\BaseObject.cs" />
+     <Compile Include="Assets\Scripts\Objects\Door.cs" />
+     <Compile Include="Assets\Scripts\Objects\Wall.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
