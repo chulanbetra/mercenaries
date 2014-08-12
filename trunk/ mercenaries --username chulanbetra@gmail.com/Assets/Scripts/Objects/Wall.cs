@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Wall : BaseObject 
-{
+{	
 	public eWallType WallType;
 	
 	// Use this for initialization
@@ -13,5 +13,5 @@ public class Wall : BaseObject
 	// Update is called once per frame
 	void Update () 
 	{	
-	}
+	}	
 }

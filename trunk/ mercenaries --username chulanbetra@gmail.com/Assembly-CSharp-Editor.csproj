@@ -44,7 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\PrefabInstantiateSelected.cs" />
+     <Compile Include="Assets\Editor\CustomWallEditor.cs" />
      <Compile Include="Assets\Editor\SnapToGrid.cs" />
  <Reference Include="UnityEditor.Graphs">
  <HintPath>D:\tools\Unity\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
