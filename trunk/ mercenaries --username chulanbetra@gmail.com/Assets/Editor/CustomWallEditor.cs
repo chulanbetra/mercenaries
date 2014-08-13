@@ -9,7 +9,6 @@ public class CustomWallEditor : Editor
 	private SerializedProperty WallType;
 	private eWallType oldWallType;
 	private GameObject activeObject;
-	private bool PropertyChanged = false;
 	
 	void OnEnable()
 	{
