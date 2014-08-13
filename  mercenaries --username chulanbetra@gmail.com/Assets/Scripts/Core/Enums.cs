@@ -7,15 +7,6 @@ public enum eGameMode
 	TURNBASED = 1,
 }
 
-// object types
-public enum eObjectType
-{		
-	ACTOR = 0,
-	DOOR = 1,
-	CONTAINER = 2,
-	ITEM = 3,		
-}
-
 // defines wall / door rotation and position on tile
 public enum eWallType
 {

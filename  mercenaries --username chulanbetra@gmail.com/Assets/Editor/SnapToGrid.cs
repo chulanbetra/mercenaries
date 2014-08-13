@@ -9,14 +9,48 @@ public class SnapToGrid : ScriptableObject
 	{
 		foreach (Transform pTransform in Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.OnlyUserModifiable)) 
 		{
-			float fSnapX = EditorPrefs.GetFloat("MoveSnapX");
-			float fSnapZ = EditorPrefs.GetFloat("MoveSnapZ");
-			// TODO: snapovanie wall / door roznych typov
-			pTransform.position = new Vector3 (
-				Mathf.Floor(pTransform.position.x / fSnapX) * fSnapX + fSnapX * 0.5f,
-				pTransform.localScale.y * 0.5f, 
-				Mathf.Floor(pTransform.position.z / fSnapZ) * fSnapZ + fSnapZ * 0.5f
-			);
+			BaseObject pObject = pTransform.gameObject.GetComponent<BaseObject>();
+			SnapObjectToGrid(pObject, pTransform);
 		}
+	}
+	
+	static void SnapObjectToGrid(BaseObject pObject, Transform pTransform)
+	{		
+		if (pObject is Wall)
+		{			
+			// snap to grid
+			Snap(pTransform);
+			
+			Wall pWall = (Wall)pObject;
+			Vector3 vPosition = pTransform.position;
+			float fTileWidth = GameSettings.Instance.TileWidth;
+			float fWallWidth = GameSettings.Instance.WallWidth;
+			
+			// snap to edge
+			switch (pWall.WallType)
+			{
+				case eWallType.WALL_LEFT:
+					vPosition.x = vPosition.x + 0.5f * (fWallWidth - fTileWidth);
+					break;
+				case eWallType.WALL_BOTTOM:
+					vPosition.z = vPosition.z + 0.5f * (fWallWidth - fTileWidth);
+					break;
+			}			
+			pTransform.position = vPosition;
+		}			
+		else
+		{
+			Snap(pTransform);
+		}
+	}
+	
+	static void Snap(Transform pTransform)
+	{
+		float fTileWidth = GameSettings.Instance.TileWidth;	
+		pTransform.position = new Vector3 (
+			Mathf.Floor(pTransform.position.x / fTileWidth) * fTileWidth + fTileWidth * 0.5f,
+			pTransform.localScale.y * 0.5f, 
+			Mathf.Floor(pTransform.position.z / fTileWidth) * fTileWidth + fTileWidth * 0.5f
+		);
 	}
 }

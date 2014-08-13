@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class BaseObject : MonoBehaviour 
-{
-	public eObjectType ObjectType;
-	
+{	
 	// Use this for initialization
 	void Start () 
 	{	
