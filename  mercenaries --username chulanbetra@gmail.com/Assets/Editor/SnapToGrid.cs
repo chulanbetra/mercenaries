@@ -7,6 +7,7 @@ public class SnapToGrid : ScriptableObject
 	[MenuItem ("Window/Snap to Grid %g")]
 	static void MenuSnapToGrid() 
 	{
+		// menu item for snaping objects to grid
 		foreach (Transform pTransform in Selection.GetTransforms(SelectionMode.TopLevel | SelectionMode.OnlyUserModifiable)) 
 		{
 			BaseObject pObject = pTransform.gameObject.GetComponent<BaseObject>();
@@ -14,6 +15,7 @@ public class SnapToGrid : ScriptableObject
 		}
 	}
 	
+	// snap objects to tile / walls and doors to the edge of tile depending on type
 	static void SnapObjectToGrid(BaseObject pObject, Transform pTransform)
 	{		
 		if (pObject is Wall)
@@ -44,6 +46,7 @@ public class SnapToGrid : ScriptableObject
 		}
 	}
 	
+	// detects tile from object pivot a snaps object to the center of the tile
 	static void Snap(Transform pTransform)
 	{
 		float fTileWidth = GameSettings.Instance.TileWidth;	
