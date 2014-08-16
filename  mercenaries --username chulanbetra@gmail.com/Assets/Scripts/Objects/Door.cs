@@ -4,6 +4,7 @@ using System.Collections;
 public class Door : Wall 
 {
 	public eDoorType DoorType;
+	public bool DoorOpen = true;
 	
 	// Use this for initialization
 	void Start () 

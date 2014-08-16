@@ -6,25 +6,16 @@ public enum eTileFlag
 	NONE = 0x00,
 	// flags for moving
 	WALKABLE = 0x01,
-	AI_WALKABLE = 0x02,
-	// wall flags
-	WALL_UP = 0x04,
-	WALL_DOWN = 0x08,
-	WALL_LEFT = 0x10,
-	WALL_RIGHT = 0x20,
-	// ai wall flags
-	AI_WALL_UP = 0x40,
-	AI_WALL_DOWN = 0x80,
-	AI_WALL_LEFT = 0x100,
-	AI_WALL_RIGHT = 0x200,
+	// wall flags	
+	WALL_LEFT = 0x02,
+	WALL_DOWN = 0x04,
+	// open door flags
+	DOOR_LEFT = 0x08,
+	DOOR_RIGHT = 0x10,
+	DOOR_UP = 0x20,
+	DOOR_DOWN = 0x40,
 	// dynamics
-	OBSTACLE = 0x400,
-	AI_OBSTACLE = 0x800,	
-	// ai type flags	
-	AI_FLYING = 0x1000,
-	
-	// Hole that can be filled.
-	HOLE = 0x2000,
+	OBSTACLE = 0x80,
 }
 
 [System.Serializable]
