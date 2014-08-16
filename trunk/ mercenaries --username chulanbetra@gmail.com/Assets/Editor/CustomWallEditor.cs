@@ -5,39 +5,29 @@ using System.Collections;
 [CustomEditor(typeof(Wall))]
 [CanEditMultipleObjects]
 public class CustomWallEditor : Editor 
-{
-	private SerializedProperty WallType;
-	private eWallType oldWallType;
-	private GameObject activeObject;
-	
+{	
 	void OnEnable()
-	{
-		WallType = serializedObject.FindProperty("WallType");
-		oldWallType = (eWallType)WallType.enumValueIndex;
-		activeObject = Selection.activeGameObject;
+	{		
 	}
 	
 	public override void OnInspectorGUI() 
-	{
-		serializedObject.Update();			
+	{		
+		Wall pWall = (Wall)target;		
+		eWallType oldWallType = pWall.WallType;
 		
-		eWallType propertyValue = (eWallType)WallType.enumValueIndex;
-		if (oldWallType != propertyValue)
-		{	
-			oldWallType = propertyValue;
-			WallPropertyChanged();
+		pWall.WallType = (eWallType)EditorGUILayout.EnumPopup("Wall Type:", pWall.WallType);		
+		
+		if (oldWallType != pWall.WallType)
+		{			
+			WallPropertyChanged(pWall.WallType, pWall.transform);
 			SceneView.RepaintAll();
 		}
-		
-		serializedObject.ApplyModifiedProperties();		
-		DrawDefaultInspector();		
 	}	
 	
-	void WallPropertyChanged()
-	{		
-		Transform pTransform = activeObject.transform;
+	void WallPropertyChanged(eWallType WallType, Transform pTransform)
+	{			
 		Vector3 vRotation = pTransform.localEulerAngles;
-		if (oldWallType == eWallType.WALL_LEFT)
+		if (WallType == eWallType.WALL_LEFT)
 		{							
 			pTransform.localEulerAngles = new Vector3(vRotation.x, 0.0f, vRotation.z);
 		}
