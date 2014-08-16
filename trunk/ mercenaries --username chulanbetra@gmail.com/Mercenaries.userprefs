@@ -6,7 +6,8 @@
       <File FileName="Assets\Editor\SnapToGrid.cs" Line="49" Column="72" />
       <File FileName="Assets\Scripts\Core\Enums.cs" Line="9" Column="1" />
       <File FileName="Assets\Scripts\Core\GameSettings.cs" Line="5" Column="24" />
-      <File FileName="Assets\Editor\CustomWallEditor.cs" Line="37" Column="5" />
+      <File FileName="Assets\Editor\CustomWallEditor.cs" Line="27" Column="38" />
+      <File FileName="Assets\Editor\CustomObjectEditor.cs" Line="5" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

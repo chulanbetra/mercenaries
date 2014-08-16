@@ -16,12 +16,14 @@ public class CustomWallEditor : Editor
 		eWallType oldWallType = pWall.WallType;
 		
 		pWall.WallType = (eWallType)EditorGUILayout.EnumPopup("Wall Type:", pWall.WallType);		
-		
+		// check if property has changed
 		if (oldWallType != pWall.WallType)
 		{			
 			WallPropertyChanged(pWall.WallType, pWall.transform);
 			SceneView.RepaintAll();
 		}
+		
+		// tile flag edit button
 	}	
 	
 	void WallPropertyChanged(eWallType WallType, Transform pTransform)
