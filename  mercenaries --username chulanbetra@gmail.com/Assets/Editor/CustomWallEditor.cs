@@ -22,8 +22,6 @@ public class CustomWallEditor : Editor
 			WallPropertyChanged(pWall.WallType, pWall.transform);
 			SceneView.RepaintAll();
 		}
-		
-		// tile flag edit button
 	}	
 	
 	void WallPropertyChanged(eWallType WallType, Transform pTransform)
