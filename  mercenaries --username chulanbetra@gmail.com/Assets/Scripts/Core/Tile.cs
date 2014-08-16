@@ -8,14 +8,19 @@ public enum eTileFlag
 	WALKABLE = 0x01,
 	// wall flags	
 	WALL_LEFT = 0x02,
-	WALL_DOWN = 0x04,
+	WALL_JUMP_LEFT = 0x04,
+	WALL_DOWN = 0x08,
+	WALL_JUMP_DOWN = 0x10,
 	// open door flags
-	DOOR_LEFT = 0x08,
-	DOOR_RIGHT = 0x10,
-	DOOR_UP = 0x20,
-	DOOR_DOWN = 0x40,
-	// dynamics
-	OBSTACLE = 0x80,
+	DOOR_LEFT = 0x20,
+	DOOR_RIGHT = 0x40,
+	DOOR_UP = 0x80,
+	DOOR_DOWN = 0x100,
+	// dynamics (actors, destroyable objects etc)
+	OBSTACLE = 0x200,
+	// can be moved through by animation
+	CRAWL_UNDER = 0x400,
+	JUMP_OVER = 0x800,
 }
 
 [System.Serializable]
