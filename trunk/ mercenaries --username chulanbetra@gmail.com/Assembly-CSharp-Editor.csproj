@@ -44,7 +44,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Editor\CustomObjectEditor.cs" />
+     <Compile Include="Assets\Editor\CustomObstacleEditor.cs" />
      <Compile Include="Assets\Editor\CustomWallEditor.cs" />
      <Compile Include="Assets\Editor\SnapToGrid.cs" />
  <Reference Include="UnityEditor.Graphs">
