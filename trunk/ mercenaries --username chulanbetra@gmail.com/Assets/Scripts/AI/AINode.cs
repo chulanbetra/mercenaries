@@ -19,6 +19,8 @@ public class AINode
 {	
 	private Point m_vPoint;	
 	private Vector3 m_vPos;
+	private int m_iLevel;
+	private Tile m_pTile;
 	
 	// neighbor AI nodes (max 8)
 	public Dictionary<eDirection, AINode> NeighborNodes;	
@@ -32,6 +34,8 @@ public class AINode
 	public float TotalDistance;
 	// reference to parent node (used when creating shortest path)
 	public AINode ParentNode;
+	
+	#region Properties
 	
 	// index position of tile (index position in map)
 	public Point IndexPosition
@@ -61,10 +65,38 @@ public class AINode
 		}
 	}
 	
-	public AINode(Point vPoint, Vector3 vPos)
+	// node height => for multilevel pathgraphs 
+	public int Level
+	{
+		get
+		{
+			return m_iLevel;
+		}
+		set
+		{
+			m_iLevel = value;
+		}
+	}
+	
+	// tile reference
+	public Tile Tile
+	{
+		get
+		{
+			return m_pTile;
+		}
+		set
+		{
+			m_pTile = value;
+		}
+	}
+	#endregion
+	
+	public AINode(Point vPoint, Vector3 vPos, int iLevel)
 	{
 		this.NeighborNodes = new Dictionary<eDirection, AINode>();
 		this.IndexPosition = vPoint;
 		this.Position = vPos;
+		this.Level = iLevel;
 	}
 }

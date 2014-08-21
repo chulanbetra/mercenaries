@@ -45,12 +45,15 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\AI\AINode.cs" />
+     <Compile Include="Assets\Scripts\AI\AIPathgraph.cs" />
+     <Compile Include="Assets\Scripts\AI\AISystem.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Core\Enums.cs" />
      <Compile Include="Assets\Scripts\Core\GameSettings.cs" />
      <Compile Include="Assets\Scripts\Core\Point.cs" />
      <Compile Include="Assets\Scripts\Core\Tile.cs" />
      <Compile Include="Assets\Scripts\EditorHelpers\SceneEdit.cs" />
+     <Compile Include="Assets\Scripts\Level\Level.cs" />
      <Compile Include="Assets\Scripts\Objects\BaseObject.cs" />
      <Compile Include="Assets\Scripts\Objects\Door.cs" />
      <Compile Include="Assets\Scripts\Objects\Obstacle.cs" />
