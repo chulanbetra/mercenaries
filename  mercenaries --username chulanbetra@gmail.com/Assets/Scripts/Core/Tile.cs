@@ -21,16 +21,29 @@ public enum eTileFlag
 	// can be moved through by animation
 	CRAWL_UNDER = 0x400,
 	JUMP_OVER = 0x800,
-	// roof flag
-	ROOF_WALKABLE = 0x1000,
 }
 
 [System.Serializable]
 // tile class
 public class Tile
 {
+	private int m_iLevel;
+	
+	public int Level
+	{
+		get
+		{
+			return m_iLevel;
+		}
+		set
+		{
+			m_iLevel = value;
+		}
+	}
+	
 	// tile mask
 	public int TileMask;
+	
 	// specific object on tile (player, enemy, etc.)
 	private GameObject TileObject;
 	

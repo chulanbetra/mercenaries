@@ -19,7 +19,6 @@ public class AINode
 {	
 	private Point m_vPoint;	
 	private Vector3 m_vPos;
-	private int m_iLevel;
 	private Tile m_pTile;
 	
 	// neighbor AI nodes (max 8)
@@ -62,19 +61,6 @@ public class AINode
 		set
 		{
 			m_vPos = value;
-		}
-	}
-	
-	// node height => for multilevel pathgraphs 
-	public int Level
-	{
-		get
-		{
-			return m_iLevel;
-		}
-		set
-		{
-			m_iLevel = value;
 		}
 	}
 	
