@@ -49,7 +49,7 @@
      <Compile Include="Assets\Scripts\AI\AISystem.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\Core\Enums.cs" />
-     <Compile Include="Assets\Scripts\Core\GameSettings.cs" />
+     <Compile Include="Assets\Scripts\Core\MapSettings.cs" />
      <Compile Include="Assets\Scripts\Core\Point.cs" />
      <Compile Include="Assets\Scripts\Core\Tile.cs" />
      <Compile Include="Assets\Scripts\Level\LevelData.cs" />
