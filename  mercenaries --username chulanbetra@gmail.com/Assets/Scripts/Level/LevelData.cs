@@ -76,7 +76,7 @@ public sealed class LevelData :MonoBehaviour
 		
 		#region Tiles
 		// draw tiles gizmo		
-		/*if (this.Tiles != null)
+		if (this.Tiles != null)
 		{
 			Gizmos.color = Color.green;
 			Vector3 vMoveUp = Vector3.up * fTileWidth * 0.5f;
@@ -84,7 +84,7 @@ public sealed class LevelData :MonoBehaviour
 			{				
 				Gizmos.DrawSphere(MapSettings.PointToVector3(pTile.Key) + vMoveUp, fTileWidth * 0.3f);
 			}
-		}*/	
+		}	
 		#endregion
 		
 		// draw pathgraph nodes gizmo

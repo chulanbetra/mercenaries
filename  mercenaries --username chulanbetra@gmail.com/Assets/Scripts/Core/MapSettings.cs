@@ -6,8 +6,8 @@ public sealed class MapSettings
 	
 	public float WallWidth = 0.2f;
 	public float TileWidth = 1.5f;
-	public int TileCountX = 100;
-	public int TileCountZ = 100;
+	public int TileCountX = 30;
+	public int TileCountZ = 30;
 	
 	MapSettings()
 	{
