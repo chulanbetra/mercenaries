@@ -25,8 +25,8 @@ public class SnapToGrid : ScriptableObject
 			
 			Wall pWall = (Wall)pObject;
 			Vector3 vPosition = pTransform.position;
-			float fTileWidth = GameSettings.Instance.TileWidth;
-			float fWallWidth = GameSettings.Instance.WallWidth;
+			float fTileWidth = MapSettings.Instance.TileWidth;
+			float fWallWidth = MapSettings.Instance.WallWidth;
 			
 			// snap to edge
 			switch (pWall.WallType)
@@ -49,7 +49,7 @@ public class SnapToGrid : ScriptableObject
 	// detects tile from object pivot a snaps object to the center of the tile
 	static void Snap(Transform pTransform)
 	{
-		float fTileWidth = GameSettings.Instance.TileWidth;	
+		float fTileWidth = MapSettings.Instance.TileWidth;	
 		pTransform.position = new Vector3 (
 			Mathf.Floor(pTransform.position.x / fTileWidth) * fTileWidth + fTileWidth * 0.5f,
 			pTransform.localScale.y * 0.5f, 

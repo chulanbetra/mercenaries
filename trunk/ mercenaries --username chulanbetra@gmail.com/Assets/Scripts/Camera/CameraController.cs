@@ -30,26 +30,26 @@ public class CameraController : MonoBehaviour
 	// move camera according to input
 	void HandleCameraMovement()
 	{
-		if (Input.GetKey(KeyCode.W) || Input.mousePosition.y > Screen.height - 30.0f)
+		if (Input.GetKey(KeyCode.W) /*|| Input.mousePosition.y > Screen.height - 30.0f*/)
 		{
 			// move camera up
 			Vector3 vDir = new Vector3(m_pViewCamera.transform.forward.x, 0, m_pViewCamera.transform.forward.z);
 			vDir.Normalize();
 			m_pViewCamera.transform.Translate(ScrollSpeed * vDir * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.S) || Input.mousePosition.y < 30.0f)
+		else if (Input.GetKey(KeyCode.S) /*|| Input.mousePosition.y < 30.0f*/)
 		{
 			// move camera down
 			Vector3 vDir = new Vector3(m_pViewCamera.transform.forward.x, 0, m_pViewCamera.transform.forward.z);
 			vDir.Normalize();
 			m_pViewCamera.transform.Translate(-ScrollSpeed * vDir * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.A) || Input.mousePosition.x < 30.0f)
+		else if (Input.GetKey(KeyCode.A) /*|| Input.mousePosition.x < 30.0f*/)
 		{
 			// move camera left
 			m_pViewCamera.transform.Translate(-ScrollSpeed * m_pViewCamera.transform.right * Time.deltaTime, Space.World);
 		}
-		else if (Input.GetKey(KeyCode.D) || Input.mousePosition.x > Screen.width - 30.0f)
+		else if (Input.GetKey(KeyCode.D) /*|| Input.mousePosition.x > Screen.width - 30.0f*/)
 		{
 			// move camera right
 			m_pViewCamera.transform.Translate(ScrollSpeed * m_pViewCamera.transform.right * Time.deltaTime, Space.World);

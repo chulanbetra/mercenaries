@@ -2,18 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public enum eDirection
-{
-	UP = 0,
-	DOWN = 1,
-	LEFT = 2,
-	RIGHT = 3,
-	UP_LEFT = 4,
-	UP_RIGHT = 5,
-	DOWN_LEFT = 6,
-	DOWN_RIGHT = 7,
-}
-
 [System.Serializable]
 public class AINode
 {	
@@ -78,11 +66,10 @@ public class AINode
 	}
 	#endregion
 	
-	public AINode(Point vPoint, Vector3 vPos, int iLevel)
+	public AINode(Point vPoint, Vector3 vPos)
 	{
 		this.NeighborNodes = new Dictionary<eDirection, AINode>();
 		this.IndexPosition = vPoint;
 		this.Position = vPos;
-		this.Level = iLevel;
 	}
 }
